@@ -1,28 +1,41 @@
 ---
-import { Picture } from 'astro:assets';
-import logo from "../images/logo.png";
+
 ---
 
-<header>
-  <div class="logo">
-    <Picture src={logo} formats={['avif', 'webp']} alt="Site logo" />
+<header class="global-padding">
+  <div class="header-container max-width-base">
+    <div class="logo">
+      <h1>Sam Smyth</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Skills</a></li>
+        <li><a href="/about">Portfolio</a></li>
+        <li><a href="/contact">Experience</a></li>
+        <li><a href="/contact" class="button button--outline">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
 </header>
 
-<style>
+<style lang="scss">
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    background-color: #f2f2f2;
+    padding-block: 2rem;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   .logo img {
@@ -30,21 +43,14 @@ import logo from "../images/logo.png";
     width: auto;
   }
 
-  nav ul {
+  ul {
     list-style: none;
+    padding: 0;
     display: flex;
+    gap: 4rem;
   }
 
-  nav ul li {
-    margin-left: 1rem;
-  }
-
-  nav ul li:first-child {
-    margin-left: 0;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
+  a {
+    font-size: 1.125rem;
   }
 </style>

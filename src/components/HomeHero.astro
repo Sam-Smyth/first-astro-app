@@ -1,0 +1,54 @@
+---
+import { Picture } from "astro:assets";
+import portrait from "../images/sam-portrait.jpg";
+---
+
+<section class="max-width-base">
+  <div class="text-content">
+    <h2>Web Designer, Project Manager and Marketer</h2>
+
+    <p>
+      Dedicated to building, designing, and managing websites that deliver
+      effective and intuitive experiences.
+    </p>
+
+    <a href="/about" class="button button--outline">Find out more</a>
+  </div>
+
+  <div class="image-content">
+    <Picture
+      src={portrait}
+      width={800}
+      height={1038}
+      formats={["avif", "webp"]}
+      alt="Sam's portrait"
+      loading="eager"
+    />
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: calc(114px + 100px);
+
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      max-width: 500px;
+    }
+
+    .image-content {
+      max-width: 400px;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+</style>

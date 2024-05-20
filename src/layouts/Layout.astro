@@ -1,4 +1,8 @@
 ---
+import "../styles/reset.css";
+import "../styles/fonts.scss";
+import "../styles/buttons.scss";
+import "@fontsource-variable/montserrat";
 import Header from "../components/Header.astro";
 
 interface Props {
@@ -27,39 +31,33 @@ const {
   </head>
   <body>
     <Header />
-    <slot />
+    <main class="global-padding">
+      <slot />
+    </main>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    --dark-primary: 51, 51, 50;
+    --accent: 22, 131, 58;
   }
+
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    font-family: "Montserrat Variable", system-ui, sans-serif;
+    font-size: 16px;
   }
-  body {
-    margin: 0;
+
+  .global-padding {
+    padding-inline: 2rem;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  .max-width-base {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .full-width {
+    margin-inline: -2rem;
   }
 </style>

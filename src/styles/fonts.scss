@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(var(--dark-primary));
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(var(--dark-primary));
+}
+
+p {
+  line-height: 1.6;
+}
